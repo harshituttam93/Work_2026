@@ -1,0 +1,11 @@
+CustomerID,Phone,CustomerName,InvoiceNo,Product,Category,PurchaseDate,Channel
+C1001,98765 12001,Aarav Mehta,INV9001,Galaxy S21,Mobile,2021-11-18,Offline Store
+C1001,98765 12001,Aarav Mehta,INV9002,Galaxy Buds Pro,Wearable,2022-04-09,ecommerce
+C1002,98765 12002,Meera Iyer,INV9010,Neo QLED 55 inch TV,TV,2024-01-12,Offline Store
+C1002,98765 12002,Meera Iyer,INV9011,Galaxy A54,Mobile,2023-07-20,Offline Store
+C1003,98765 12003,Kabir Khan,INV9020,Galaxy M52,Mobile,2021-06-03,Offline Store
+C1003,98765 12003,Kabir Khan,INV9021,Galaxy Tab A8,Tablet,2022-10-14,ecommerce
+C1004,98765 12004,Ritika Sharma,INV9030,Galaxy S24,Mobile,2026-03-04,Offline Store
+C1004,98765 12004,Ritika Sharma,INV9031,Galaxy Watch4,Wearable,2022-02-10,Offline Store
+C1005,98765 12005,Sanjay Rao,INV9040,Galaxy A32,Mobile,2020-12-21,Offline Store
+C1005,98765 12005,Sanjay Rao,INV9041,Samsung Refrigerator,Appliance,2023-05-08,Offline Store

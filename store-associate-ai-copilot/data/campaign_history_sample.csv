@@ -1,0 +1,13 @@
+CustomerID,CampaignName,Channel,Response
+C1001,Galaxy AI upgrade email,Email,Opened
+C1001,Trade-in push,App Push,Clicked
+C1001,Samsung Care+ reminder,App Push,Viewed
+C1002,TV soundbar bundle email,Email,Clicked
+C1002,SmartThings onboarding push,App Push,Clicked
+C1003,Performance upgrade SMS,SMS,Clicked
+C1003,Festival EMI offer,WhatsApp,Viewed
+C1004,Watch upgrade push,App Push,Clicked
+C1004,Buds accessory bundle,Email,Opened
+C1004,Samsung Health challenge,App Push,Clicked
+C1005,A-series upgrade SMS,SMS,Clicked
+C1005,Offline exchange event invite,Phone Call,Interested

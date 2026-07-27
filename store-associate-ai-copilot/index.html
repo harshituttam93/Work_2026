@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Samsung Store Associate AI Assistant</title>
+    <meta
+      name="description"
+      content="Interactive retail AI assistant demo for Samsung store associates using open-source retail dataset patterns."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Store associate assistant workspace">
+        <aside class="customer-rail" aria-label="Customer lookup">
+          <div class="brand-lockup">
+            <span class="brand-mark">S</span>
+            <div>
+              <p>Samsung Retail AI</p>
+              <strong>Associate Console</strong>
+            </div>
+          </div>
+
+          <label class="lookup-label" for="customerSearch">Customer ID or phone</label>
+          <input id="customerSearch" type="search" autocomplete="off" placeholder="Search customer" />
+
+          <div class="customer-list" id="customerList" aria-label="Matched customers"></div>
+
+          <div class="source-panel">
+            <span>Data basis</span>
+            <p>
+              Demo records are Samsung-flavored samples mapped from open retail schemas:
+              transaction history, ecommerce events, and basket affinities.
+            </p>
+          </div>
+        </aside>
+
+        <section class="assistant-panel">
+          <header class="topbar">
+            <div>
+              <p class="eyebrow">Walk-in customer view</p>
+              <h1 id="customerName">Customer profile</h1>
+            </div>
+            <div class="top-actions">
+              <div class="visit-chip" id="visitChip">In-store visit</div>
+              <button id="generateAi" type="button">Generate with ChatGPT</button>
+            </div>
+          </header>
+
+          <div class="ai-status" id="aiStatus">Backend status: checking...</div>
+
+          <section class="summary-grid" aria-label="Customer summary">
+            <article>
+              <span>Products owned</span>
+              <strong id="ownedProducts">-</strong>
+            </article>
+            <article>
+              <span>Last purchase</span>
+              <strong id="lastPurchase">-</strong>
+            </article>
+            <article>
+              <span>Browsing interest</span>
+              <strong id="browsingInterest">-</strong>
+            </article>
+            <article>
+              <span>Campaigns seen</span>
+              <strong id="campaignsSeen">-</strong>
+            </article>
+          </section>
+
+          <section class="decision-area">
+            <article class="recommendation-card">
+              <div class="section-title">
+                <span>Recommended action</span>
+                <strong id="upgradeNeed">-</strong>
+              </div>
+              <h2 id="bestProduct">-</h2>
+              <p id="recommendationReason">-</p>
+              <div class="confidence-row">
+                <span>Assistant confidence</span>
+                <div class="confidence-track" aria-hidden="true">
+                  <div id="confidenceFill"></div>
+                </div>
+                <strong id="confidenceText">-</strong>
+              </div>
+            </article>
+
+            <article class="offer-card">
+              <div class="section-title">
+                <span>Best offer or bundle</span>
+              </div>
+              <h2 id="bestOffer">-</h2>
+              <ul id="bundleItems"></ul>
+            </article>
+          </section>
+
+          <section class="conversation-grid">
+            <article>
+              <div class="section-title">
+                <span>Possible objections</span>
+              </div>
+              <ul id="objections"></ul>
+            </article>
+
+            <article>
+              <div class="section-title">
+                <span>Recommended talking points</span>
+              </div>
+              <ol id="talkingPoints"></ol>
+            </article>
+          </section>
+
+          <section class="script-panel" aria-label="Generated associate script">
+            <div class="section-title">
+              <span>Suggested associate script</span>
+              <button id="copyScript" type="button">Copy</button>
+            </div>
+            <p id="pitchScript">-</p>
+            <p class="backend-note" id="backendNote"></p>
+          </section>
+
+          <section class="genai-chat-panel" aria-label="ChatGPT associate assistant">
+            <div class="section-title">
+              <span>ChatGPT sales coach</span>
+              <strong id="chatMode">Backend model</strong>
+            </div>
+            <div class="chat-log" id="chatLog" aria-live="polite"></div>
+            <form class="chat-form" id="chatForm">
+              <input
+                id="chatQuestion"
+                type="text"
+                autocomplete="off"
+                placeholder="Ask: how should I handle a price objection?"
+              />
+              <button id="sendChat" type="submit">Ask</button>
+            </form>
+          </section>
+        </section>
+
+        <aside class="insight-rail" aria-label="Signals and next steps">
+          <section class="signal-card">
+            <div class="section-title">
+              <span>Key signals</span>
+            </div>
+            <div id="signalStack" class="signal-stack"></div>
+          </section>
+
+          <section class="signal-card">
+            <div class="section-title">
+              <span>Outcome capture</span>
+            </div>
+            <div class="outcome-buttons" id="outcomeButtons">
+              <button type="button" data-outcome="Interested">Interested</button>
+              <button type="button" data-outcome="Demo booked">Demo booked</button>
+              <button type="button" data-outcome="Price objection">Price objection</button>
+              <button type="button" data-outcome="Purchased">Purchased</button>
+            </div>
+            <p id="outcomeNote">No outcome logged.</p>
+          </section>
+
+          <section class="signal-card compact-source">
+            <div class="section-title">
+              <span>Open-source mapping</span>
+            </div>
+            <dl>
+              <div>
+                <dt>UCI Online Retail</dt>
+                <dd>Transaction recency, product ownership, basket history</dd>
+              </div>
+              <div>
+                <dt>RetailRocket / OTTO</dt>
+                <dd>View, cart, order events for browsing intent</dd>
+              </div>
+              <div>
+                <dt>Instacart</dt>
+                <dd>Bundle and repeat-purchase affinity logic</dd>
+              </div>
+            </dl>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
